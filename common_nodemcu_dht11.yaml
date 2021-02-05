@@ -52,9 +52,9 @@ sensor:
     update_interval: 60s
 
   - platform: wifi_signal
-    name: ${friendly_name} WiFi Signal Strength
+    name: ${device_name}_rssi
     update_interval: 60s
 
 text_sensor:
   - platform: version
-    name: ${friendly_name} ESPHome Version
+    name: ${device_name}_esphome_version
