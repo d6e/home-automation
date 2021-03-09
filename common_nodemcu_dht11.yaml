@@ -58,3 +58,6 @@ sensor:
 text_sensor:
   - platform: version
     name: ${device_name}_esphome_version
+
+status_led:
+  pin: GPIO2
