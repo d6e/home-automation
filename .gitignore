@@ -1,6 +1,7 @@
-# Gitignore settings for ESPHome
-# This is an example and may include too much for your use-case.
-# You can modify this file to suit your needs.
+*
+!*.jpg
+!*.yaml
+!*.yml
 /.esphome/
 **/.pioenvs/
 **/.piolibdeps/
@@ -8,9 +9,3 @@
 **/src/
 **/platformio.ini
 /secrets.yaml
-
-# Everything that isn't a config
-*
-!*.jpg
-!*.yaml
-!*.yml
