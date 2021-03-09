@@ -8,3 +8,9 @@
 **/src/
 **/platformio.ini
 /secrets.yaml
+
+# Everything that isn't a config
+*
+!*.jpg
+!*.yaml
+!*.yml
