@@ -12,14 +12,10 @@ wifi:
   password: !secret wifi_pwd
   fast_connect: false
 
-      #mqtt: # Not compatible with the api config
-  #  broker: homeassistant.local
-  #  discovery: True
+mqtt: # Not compatible with the api config
+  broker: hass.home.d6e.io
 
 logger:
-
-api: # Not compatible with the MQTT config
-  password: !secret esphome_api_pwd
 
 ota:
   password: !secret esphome_ota_pwd
