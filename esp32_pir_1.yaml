@@ -1,0 +1,16 @@
+---
+substitutions:
+  <<: !include secrets.yaml
+  device_name: esp32_pir_1
+  platform_name: ESP32
+  board_name: nodemcu-32s
+  pir_pin: GPIO15
+
+<<: !include common/device_base.yaml
+<<: !include common/wifi.yaml
+
+sensor:
+  - <<: !include common/sensor/wifi_signal.yaml
+
+binary_sensor:
+  - <<: !include common/binary_sensor/pir.yaml

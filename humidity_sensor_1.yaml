@@ -1,3 +1,0 @@
-substitutions:
-  device_name: humidity_sensor_1
-<<: !include common_nodemcu_dht11.yaml

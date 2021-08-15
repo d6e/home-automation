@@ -1,0 +1,23 @@
+---
+esphome:
+  name: ${device_name}
+  build_path: ./build/${device_name}
+  platform: ${platform_name}
+  board: ${board_name}
+
+mqtt:  # Not compatible with the api config
+  broker: mqtt.home.d6e.io
+  discovery: true
+
+logger:
+
+switch:
+  - platform: restart
+    name: ${device_name}_Restart
+
+text_sensor:
+  - platform: version
+    name: ${device_name}_esphome_version
+
+status_led:
+  pin: GPIO2

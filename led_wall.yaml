@@ -1,0 +1,27 @@
+---
+substitutions:
+  <<: !include secrets.yaml
+  device_name: led_wall
+  platform_name: ESP32
+  board_name: esp32doit-devkit-v1
+
+<<: !include common/device_base.yaml
+<<: !include common/wifi.yaml
+
+sensor:
+  - <<: !include common/sensor/wifi_signal.yaml
+
+
+light:
+  - platform: fastled_clockless
+    chipset: WS2811
+    pin: GPIO23
+    num_leds: 50
+    rgb_order: BGR
+    name: "FastLED WS2811 Light"
+    restore_mode: ALWAYS_ON
+    effects:
+      - addressable_rainbow:
+          name: Rainbow Effect With Custom Values
+          speed: 10
+          width: 50

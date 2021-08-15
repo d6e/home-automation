@@ -1,0 +1,19 @@
+---
+substitutions:
+  <<: !include secrets.yaml
+  device_name: sensor_ht_1
+  platform_name: ESP32
+  board_name: nodemcu-32s
+
+
+<<: !include common/device_base.yaml
+<<: !include common/wifi.yaml
+
+sensor:
+  - <<: !include common/sensor/dht11.yaml
+  - <<: !include common/sensor/pmsx003.yaml
+  - <<: !include common/sensor/wifi_signal.yaml
+
+uart:
+  rx_pin: GPIO22
+  baud_rate: 9600

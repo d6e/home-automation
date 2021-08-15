@@ -1,0 +1,26 @@
+---
+platform: dht
+pin: GPIO23
+temperature:
+  name: ${device_name} Temperature
+  filters:
+    - filter_out: nan
+    - heartbeat: 15s
+    - sliding_window_moving_average:
+        window_size: 2
+        send_every: 2
+        send_first_at: 1
+    - lambda: return x * (9.0/5.0) + 32.0;  # report temperature in Fahrenheit
+  unit_of_measurement: "°F"
+humidity:
+  name: ${device_name} Humidity
+  filters:
+    - filter_out: nan
+    - heartbeat: 15s
+    - sliding_window_moving_average:
+        window_size: 2
+        send_every: 2
+        send_first_at: 1
+  accuracy_decimals: 1        # humidity gets 0 decimals by default
+model: DHT11
+update_interval: 60s

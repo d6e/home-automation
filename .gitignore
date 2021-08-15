@@ -1,12 +1,8 @@
-*
-!*.jpg
-!*.sh
-!*.yaml
-!*.yml
-/.esphome/
+.esphome/
 **/.pioenvs/
 **/.piolibdeps/
 **/lib/
 **/src/
 **/platformio.ini
-/secrets.yaml
+secrets.yaml
+build/

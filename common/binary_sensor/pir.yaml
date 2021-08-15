@@ -1,0 +1,5 @@
+---
+platform: gpio
+pin: ${pir_pin}
+name: "PIR Sensor"
+device_class: motion
